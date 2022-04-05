@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block div %}
+
+<style >
+  .logoutt{
+    position:relative;
+    left:650px;
+    font-size:18px;
+  }
+
+</style>
+
+<div class="logoutt" >
+<li class="nav-item" >
+  <a class="nav-link btn btn-danger"   aria-current="page" href="{% url 'admin_logout' %}">Log-Out</a>
+</li>
+</div>
+
+
+{%endblock div %}
+
+
+{% block title %}
+add_equipments
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container" style="margin-top:90px;">
+<h2 class="text-center font-weight-bold font-family-calibri ">ADD MEMBER</h2>
+<form method="post">
+{%csrf_token %}
+<label ><b> First Name</b></label>
+<input type="text" name="name" class="form-control">
+<label ><b> Last Name</b></label>
+<input type="text" name="last_name" class="form-control">
+<label ><b>Contact No.</b></label>
+<input type="text" name="contact" class="form-control">
+<label ><b>Email_Id</b></label>
+<input type="text" name="email" class="form-control">
+<label ><b>Age</b></label>
+<input type="text" name="age" class="form-control">
+<br>
+<input type="submit"  name="subbmit" value="Submit" class="form-control btn btn-success">
+</form>
+
+</div>
+
+</form>
+
+</div>
+
+
+{% endblock body %}
